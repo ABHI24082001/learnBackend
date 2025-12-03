@@ -2,14 +2,24 @@ const express = require('express');
 
 const app = express();
 
+app.get("/user" , (req , res) => {
+    res.send({firstName : "Abhi" , lastName : "Kumar"}); 
+});
 
-app.use("/test",(req , res) => {
-    res.send('Hello from test route');
-    
-})
+app.post("/user" , (req , res) => {
+    res.send("Post Request Called");
+});
 
-app.use( "/Abhi" , (req, res) => {
-  res.send('Hello from Abhi route');
+app.delete("/user" , (req , res) => {
+    res.send("Delete Request Called");
+});
+
+app.put("/user" , (req , res) => {
+    res.send("Put Request Called");
+});
+
+app.patch("/user" , (req , res) => {
+    res.send("Patch Request Called");
 });
 
 app.listen(3000, () => {
